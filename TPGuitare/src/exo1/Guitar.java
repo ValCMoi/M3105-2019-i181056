@@ -1,26 +1,31 @@
 package exo1;
 
+import exo2.Builder;
+import exo2.Type;
+import exo2.Wood;
+
 public class Guitar {
 
 	String seriealNumber;
-	String builder;
+	Builder builder;
 	String model;
-	String type;
-	String backWood;
-	String topWood;
+	Type type;
+	Wood backWood;
+	Wood topWood;
 	double price;
 	
-	public Guitar(String nms, double pr, String build, String model, String type, String backwood,
-			String topwood) {
 
-		this.seriealNumber = nms;
-		this.builder = build;
-		this.model = model;
-		this.type = type;
-		this.backWood = backwood;
-		this.topWood =topwood ;
-		this.price = pr;
+
+	public Guitar(String nms, double price2, Builder fender, String model2, Type electric, Wood alder, Wood alder2) {
 		
+		
+		this.seriealNumber = nms;
+		this.builder = fender;
+		this.model = model2;
+		this.type = electric;
+		this.backWood = alder;
+		this.topWood =alder2 ;
+		this.price = price2;
 		
 	}
 
@@ -36,7 +41,7 @@ public class Guitar {
 		return seriealNumber;
 	}
 
-	public String getBuilder() {
+	public Builder getBuilder() {
 		return builder;
 	}
 
@@ -44,17 +49,18 @@ public class Guitar {
 		return model;
 	}
 
-	public String getType() {
+	public Type getType() {
 		return type;
 	}
 
-	public String getBackWood() {
+	public Wood getBackWood() {
 		return backWood;
 	}
 
-	public String getTopWood() {
+	public Wood getTopWood() {
 		return topWood;
 	}
+
 
 	
 	
