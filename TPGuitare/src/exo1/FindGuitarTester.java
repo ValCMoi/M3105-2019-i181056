@@ -1,5 +1,11 @@
 package exo1;
 
+import javax.management.modelmbean.ModelMBean;
+
+import exo2.Builder;
+import exo2.Type;
+import exo2.Wood;
+
 public class FindGuitarTester {
 
 	public static void main(String[] args) {
@@ -8,9 +14,9 @@ public class FindGuitarTester {
 		
 		initializeInventory(inventory);
 
-		Guitar whatErinLikes = new Guitar("", 0, "Fender", "Stratocastor", "electric", "Alder", "Alder");
+		Guitar whatErinLikes = new Guitar("", 0, Builder.FENDER, "Stratocaster", Type.ELECTRIC, Wood.ALDER, Wood.ALDER);
 		
-		Guitar guitar = inventory.search(whatErinLikes);
+		Guitar guitar = (Guitar) inventory.search(whatErinLikes);
 		
 		if (guitar != null) {
 			System.out.println("Erin, you might like this " + guitar.getBuilder() + " " + guitar.getModel() + " "

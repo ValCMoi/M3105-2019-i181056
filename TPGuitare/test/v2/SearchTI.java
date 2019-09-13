@@ -1,10 +1,17 @@
-package exo2;
+package v2;
 
 import static org.junit.Assert.*;
 
 import java.util.List;
 
 import org.junit.*;
+
+import exo2.Builder;
+import exo2.FindGuitarTester;
+import exo2.Guitar;
+import exo2.Inventory;
+import exo2.Type;
+import exo2.Wood;
 
 
 public class SearchTI {

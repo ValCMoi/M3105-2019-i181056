@@ -1,8 +1,4 @@
-package exo1;
-
-import exo2.Builder;
-import exo2.Type;
-import exo2.Wood;
+package exo3;
 
 public class Guitar {
 
@@ -11,21 +7,24 @@ public class Guitar {
 	String model;
 	Type type;
 	Wood backWood;
+	public String getSeriealNumber() {
+		return seriealNumber;
+	}
+
 	Wood topWood;
 	double price;
 	
+	public Guitar(String serialNumber, double price, Builder builder, String model, Type type, Wood backWood,
+			Wood topWood) {
 
-
-	public Guitar(String nms, double price2, exo3.Builder fender, String model2, exo3.Type electric, exo3.Wood alder, exo3.Wood alder2) {
+		this.seriealNumber = serialNumber;
+		this.builder = builder;
+		this.model = model;
+		this.type = type;
+		this.backWood = backWood;
+		this.topWood =topWood ;
+		this.price = price;
 		
-		
-		this.seriealNumber = nms;
-		this.builder = fender;
-		this.model = model2;
-		this.type = electric;
-		this.backWood = alder;
-		this.topWood =alder2 ;
-		this.price = price2;
 		
 	}
 
@@ -37,10 +36,8 @@ public class Guitar {
 		this.price = price;
 	}
 
-	public String getSeriealNumber() {
-		return seriealNumber;
-	}
-
+	
+	
 	public Builder getBuilder() {
 		return builder;
 	}
@@ -60,7 +57,6 @@ public class Guitar {
 	public Wood getTopWood() {
 		return topWood;
 	}
-
 
 	
 	
