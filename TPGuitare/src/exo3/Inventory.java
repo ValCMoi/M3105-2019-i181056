@@ -1,5 +1,6 @@
 package exo3;
 
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
@@ -26,35 +27,41 @@ public class Inventory {
 		return null;
 	}
 
-	public Guitar search(Guitar searchGuitar) {
+	public List<Guitar> search(GuitarSpec searchGuitar) {
+		List<Guitar> recherche = new ArrayList<Guitar>();
 		for (Iterator<Guitar> i = guitars.iterator(); i.hasNext();) {
 			Guitar guitar = i.next();
 			// Ignore serial number since that's unique
 			// Ignore price since that's unique
 
 			Builder builder = searchGuitar.getBuilder();
-			if ((builder != null) && (!builder.equals(guitar.getBuilder())))
+			if ((builder != null) && (!builder.equals(guitar.getSpec().getBuilder())))
 				continue;
 
 			String model = searchGuitar.getModel();
-			if ((model != null) && (!model.equals("")) && (!model.equalsIgnoreCase(guitar.getModel())))
+			if ((model != null) && (!model.equals("")) && (!model.equalsIgnoreCase(guitar.getSpec().getModel())))
 				continue;
 
 			Wood topWood = searchGuitar.getTopWood();
-			if ((topWood != null) && (!topWood.equals(guitar.getTopWood())))
+			if ((topWood != null) && (!topWood.equals(guitar.getSpec().getTopWood())))
 				continue;
 
 			Wood backWood = searchGuitar.getBackWood();
-			if ((backWood != null)  && (!backWood.equals(guitar.getBackWood())))
+			if ((backWood != null) && (!backWood.equals(guitar.getSpec().getBackWood())))
 				continue;
 
 			Type type = searchGuitar.getType();
-			if ((type != null)  && (!type.equals(guitar.getType())))
+			if ((type != null) && (!type.equals(guitar.getSpec().getType())))
 				continue;
 
-			return guitar;
+			recherche.add(guitar);
 		}
-		return null;
+		return recherche;
+	}
+
+	public void addGuitar(String string, double d, GuitarSpec guitarSpec) {
+		guitars.add(new Guitar(string,d,guitarSpec));
+		
 	}
 
 }

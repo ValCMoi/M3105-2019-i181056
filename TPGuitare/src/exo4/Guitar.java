@@ -1,4 +1,4 @@
-package exo3;
+package exo4;
 
 public class Guitar  {
 
@@ -7,13 +7,21 @@ public class Guitar  {
 	GuitarSpec spec;
 
 	
-	public Guitar(String serialNumber, double price, Builder builder, String model, Type type, Wood backWood,
+	public Guitar(String serialNumber, double price, Builder builder, String model, Type type,int numCorde, Wood backWood,
 			Wood topWood) {
 		super();
 		this.seriealNumber = serialNumber;
 		this.price = price;
-		spec =new GuitarSpec(builder, model, type, backWood, topWood);
+		spec =new GuitarSpec(builder, model, type,numCorde, backWood, topWood);
 	}
+	
+	public Guitar(String serialNumber, double price, GuitarSpec spec) {
+		super();
+		this.seriealNumber = serialNumber;
+		this.price = price;
+		this.spec = spec;
+	}
+	
 
 	/*
 	public Guitar(Builder b, String model, Type t, Wood wBack, Wood wTop) {
